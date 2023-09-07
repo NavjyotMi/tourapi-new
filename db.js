@@ -2,14 +2,10 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      'mongodb+srv://navjyot:navjyot@cluster0.cp8jzo9.mongodb.net/natours-app?retryWrites=true&w=majority',
-      // 'mongodb+srv://navjyot:navjyot@cluster0.3wdfuzx.mongodb.net/buller?retryWrites=true&w=majority',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    await mongoose.connect(database, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log('mongodb connected');
     // console.log(`hostname ${connect.connection.host}`);
   } catch (err) {
